@@ -13,3 +13,7 @@ puts "----------"
 @average_aggregate_annual_revenue = @aggregate_total_revenue / Store.count
 puts "The total revenue for the entire company is: $" + @aggregate_total_revenue.to_s
 puts "The average revenue for the entire company is: $" + @average_aggregate_annual_revenue.to_s
+
+@stores_making_at_least_1mil = Store.where('annual_revenue >= 1000000')
+
+puts "Currently, there are #{@stores_making_at_least_1mil.size.to_s} locations that generate 1 million dollars or more annually."
